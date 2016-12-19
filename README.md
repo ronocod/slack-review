@@ -2,8 +2,7 @@
 
 **Send a PR review request to Slack from Github.**
 
-<img src="https://cloud.githubusercontent.com/assets/466546/21317615/c98276b4-c5fd-11e6-9d37-87dc6307a878.png">
-
+<img src="https://cloud.githubusercontent.com/assets/466546/21317647/e8fb3e9a-c5fd-11e6-9eea-135d7ed22f2f.png">
 ## Installation
 * Set up an [incoming webhook](https://my.slack.com/services/new/incoming-webhook) on your Slack account and grab the API key
 * Load this into `chrome://extensions/` using *"Load Unpacked Extension"*
