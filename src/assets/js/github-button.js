@@ -1,4 +1,4 @@
-function sendRequest(params) {
+function sendRequest(params, button) {
   var url = params.url;
   var channel = params.channel;
 
@@ -53,7 +53,7 @@ function addButton(params) {
   button.className = "btn btn-sm";
   button.addEventListener("click", function() {
     if (!hasSentRequest) {
-      sendRequest(params);
+      sendRequest(params, button);
     }
   });
 
