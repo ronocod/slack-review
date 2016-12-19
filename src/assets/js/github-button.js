@@ -1,20 +1,3 @@
-var hasSentRequest = false;
-var button = document.createElement("BUTTON")
-button.innerHTML = 'Request review in Slack';
-button.type = "button";
-button.className = "btn btn-sm";
-button.addEventListener("click", function() {
-  if (!hasSentRequest) {
-    chrome.storage.local.get(null, function(items) {
-      console.log(JSON.stringify(items))
-      sendRequest(items);
-    });
-  }
-})
-
-document.querySelector("#partial-discussion-header > div.gh-header-show > div")
-  .appendChild(button);
-
 function sendRequest(params) {
   var url = params.url;
   var channel = params.channel;
@@ -60,3 +43,22 @@ function sendRequest(params) {
     button.innerHTML = "Failed to send, check the console";
   });
 }
+
+function addButton(params) {
+  var hasSentRequest = false;
+  var button = document.createElement("BUTTON")
+  var channelName = params.channel || 'Slack'
+  button.innerHTML = 'Request review in ' + channelName;
+  button.type = "button";
+  button.className = "btn btn-sm";
+  button.addEventListener("click", function() {
+    if (!hasSentRequest) {
+      sendRequest(params);
+    }
+  });
+
+  document.querySelector("#partial-discussion-header > div.gh-header-show > div")
+    .appendChild(button);
+}
+
+chrome.storage.local.get(null, addButton);
