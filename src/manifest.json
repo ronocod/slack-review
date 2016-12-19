@@ -1,0 +1,24 @@
+{
+  "name": "Slack GitHub Review",
+  "description": "Send a review request for the currently open PR to Slack, directly from GitHub",
+  "version": "0.0.1",
+  "content_scripts": [{
+    "matches": ["https://github.com/*/pull/*"],
+    "js": ["assets/js/jquery-2.1.0.min.js","assets/js/github-button.js"]
+  }],
+  "permissions": [
+    "tabs", "https://github.com/*/pull/*",
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "web_accessible_resources": ["options.html"],
+  "icons":{
+    "16": "assets/images/slacklink_16.png",
+    "48": "assets/images/slacklink_48.png",
+    "128": "assets/images/slacklink_128.png"
+  },
+  "manifest_version": 2
+}
