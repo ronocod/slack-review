@@ -1,5 +1,5 @@
 {
-  "name": "Slack GitHub Review",
+  "name": "SlackReview",
   "description": "Send a review request for the currently open PR to Slack, directly from GitHub",
   "version": "0.0.1",
   "content_scripts": [{
@@ -16,9 +16,9 @@
   },
   "web_accessible_resources": ["options.html"],
   "icons":{
-    "16": "assets/images/slacklink_16.png",
-    "48": "assets/images/slacklink_48.png",
-    "128": "assets/images/slacklink_128.png"
+    "16": "assets/images/slackreview_16.png",
+    "48": "assets/images/slackreview_48.png",
+    "128": "assets/images/slackreview_128.png"
   },
   "manifest_version": 2
 }
