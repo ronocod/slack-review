@@ -4,9 +4,9 @@
 
 <img src="https://cloud.githubusercontent.com/assets/466546/21317647/e8fb3e9a-c5fd-11e6-9eea-135d7ed22f2f.png">
 ## Installation
-* Set up an [incoming webhook](https://my.slack.com/services/new/incoming-webhook) on your Slack account and grab the API key
-* Load this into `chrome://extensions/` using *"Load Unpacked Extension"*
-* Enter in your webhook URL through the extension options page in Chrome
+* Set up an [incoming webhook](https://intercom.slack.com/apps/A0F7XDUAZ-incoming-webhooks) on your Slack account and grab the Webhook URL
+* If using this through the repo, load this into `chrome://extensions/` using *"Load Unpacked Extension"*
+* Enter in your webhook URL and other details through the extension options page in Chrome
 
 ## A note on security
 This extension stores your incoming webhook URL locally, so it's only as secure as your Chrome install.
