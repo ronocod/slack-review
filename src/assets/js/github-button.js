@@ -16,8 +16,9 @@ function sendRequest(params, button) {
   var username = params.username || 'Review Request';
   var icon_emoji = params.emoji || ':slack:';
   var gitHubUrl = window.location.href;
+  var repoName = gitHubUrl.split("/")[4];
   var titleElement = document.querySelector('#partial-discussion-header > div.gh-header-show > h1 > span.js-issue-title')
-  var title = titleElement.innerHTML.trim();
+  var title = repoName + " - " + titleElement.innerHTML.trim();
   var greenDiff = document.querySelector('#diffstat > span.text-green').innerHTML.trim();
   var redDiff = document.querySelector('#diffstat > span.text-red').innerHTML.trim();
 
