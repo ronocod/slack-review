@@ -4,17 +4,30 @@
   <title>My Test Extension Options</title>
   <style>
     body: { padding: 10px; }
+    input[type=text], select {
+        width: 100%;
+        padding: 8px 8px;
+        margin: 8px 0;
+        display: inline-block;
+    }
   </style>
 </head>
 
 <body>
-	URL: <input type="text" id="url"><br>
-	Channel: <input type="text" id="channel"><br>
-	Username: <input type="text" id="username"><br>
-	Emoji: <input type="text" id="emoji"><br>
+	<b>Webhook URL</b>
+  <input type="text" id="url" placeholder="https://hooks.slack.com/services/..."><br>
+
+  <b>Channel</b>
+  <input type="text" id="channel" placeholder="#code-reviews"><br>
+
+  <b>Username</b>
+  <input type="text" id="username" placeholder="Review Bot"><br>
+
+  <b>Emoji</b>
+  <input type="text" id="emoji" placeholder=":smile:"><br>
 
   <div id="status"></div>
-  <button id="save">Save</button>
+  <button id="save"><b>Save</b></button>
 
   <script src="assets/js/options.js"></script>
 </body>
