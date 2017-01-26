@@ -1,7 +1,7 @@
 {
   "name": "SlackReview",
   "description": "Send a review request for the currently open PR to Slack, directly from GitHub",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "content_scripts": [{
     "matches": ["https://github.com/*/pull/*"],
     "js": ["assets/js/jquery-2.1.0.min.js","assets/js/github-button.js"]
