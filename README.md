@@ -4,7 +4,7 @@
 
 <img src="https://cloud.githubusercontent.com/assets/466546/21317647/e8fb3e9a-c5fd-11e6-9eea-135d7ed22f2f.png">
 ## Installation
-* Set up an [incoming webhook](https://intercom.slack.com/apps/A0F7XDUAZ-incoming-webhooks) on your Slack account and grab the Webhook URL
+* Set up an [incoming webhook](https://my.slack.com/apps/A0F7XDUAZ-incoming-webhooks) on your Slack account and grab the Webhook URL
 * If using this through the repo, load this into `chrome://extensions/` using *"Load Unpacked Extension"*
 * Enter in your webhook URL and other details through the extension options page in Chrome
 
