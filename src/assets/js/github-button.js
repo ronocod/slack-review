@@ -37,7 +37,7 @@ function sendRequest(params, button) {
     data: JSON.stringify(payload)
   }).always(function() {
     button.disabled = true;
-    button.innerHTML = "Request Sent";
+    button.innerHTML = "Sent";
     hasSentRequest = true;
   }).fail(function() {
     console.error('Uh oh, something\'s wrong. Check your Slacklink options');
