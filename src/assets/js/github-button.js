@@ -1,6 +1,6 @@
-function sendRequest(params, button) {
+function sendRequest(params, channelName, button) {
   var url = params.url;
-  var channel = params.channel;
+  var channel = channelName;
 
   if (!url || !channel) {
     console.error("Couldn't request review: missing URL or channel");
@@ -53,7 +53,7 @@ function addButton(params, channelName) {
   button.className = "btn btn-sm";
   button.addEventListener("click", function() {
     if (!hasSentRequest) {
-      sendRequest(params, button);
+      sendRequest(params, channelName, button);
     }
   });
 
@@ -64,7 +64,7 @@ function addButton(params, channelName) {
 function addButtons(params) {
   var channelNames = params.channel || '#code-reviews';
   channelNames.split(",").map(function(channelName) {
-    addButton(params, channelName);
+    addButton(params, channelName.trim());
   });
 }
 
