@@ -40,16 +40,15 @@ function sendRequest(params, button) {
     button.innerHTML = "Sent";
     hasSentRequest = true;
   }).fail(function() {
-    console.error('Uh oh, something\'s wrong. Check your Slacklink options');
+    console.error('Uh oh, something\'s wrong. Check your SlackReview options');
     button.innerHTML = "Failed to send, check the console";
   });
 }
 
-function addButton(params) {
+function addButton(params, channelName) {
   var hasSentRequest = false;
   var button = document.createElement("BUTTON")
-  var channelName = params.channel || 'Slack'
-  button.innerHTML = 'Request review in ' + channelName;
+  button.innerHTML = 'Send to ' + channelName;
   button.type = "button";
   button.className = "btn btn-sm";
   button.addEventListener("click", function() {
@@ -62,4 +61,11 @@ function addButton(params) {
     .appendChild(button);
 }
 
-chrome.storage.local.get(null, addButton);
+function addButtons(params) {
+  var channelNames = params.channel || '#code-reviews';
+  channelNames.split(",").map(function(channelName) {
+    addButton(params, channelName);
+  });
+}
+
+chrome.storage.local.get(null, addButtons);
