@@ -17,7 +17,7 @@ function sendRequest(params, channelName, button) {
   var icon_emoji = params.emoji || ':slack:';
   var gitHubUrl = window.location.href;
   var repoName = gitHubUrl.split("/")[4];
-  var titleElement = document.querySelector('#partial-discussion-header > div.gh-header-show > h1 > span.js-issue-title')
+  var titleElement = document.querySelector('#partial-discussion-header > div.gh-header-show > h1 > span.js-issue-title');
   var title = repoName + " - " + titleElement.innerHTML.trim();
   var greenDiff = document.querySelector('#diffstat > span.text-green').innerHTML.trim();
   var redDiff = document.querySelector('#diffstat > span.text-red').innerHTML.trim();
@@ -47,7 +47,7 @@ function sendRequest(params, channelName, button) {
 
 function addButton(params, channelName) {
   var hasSentRequest = false;
-  var button = document.createElement("BUTTON")
+  var button = document.createElement("BUTTON");
   button.innerHTML = 'Send to ' + channelName;
   button.type = "button";
   button.className = "btn btn-sm";
@@ -57,8 +57,9 @@ function addButton(params, channelName) {
     }
   });
 
-  document.querySelector("#partial-discussion-header > div.gh-header-show > div")
-    .appendChild(button);
+  var headerActions = document.querySelector("#partial-discussion-header > div.gh-header-show > div");
+  headerActions.appendChild(button);
+  headerActions.addEventListener("DOMNodeRemovedFromDocument", attachSlackReviewButton);
 }
 
 function addButtons(params) {
@@ -68,4 +69,8 @@ function addButtons(params) {
   });
 }
 
-chrome.storage.local.get(null, addButtons);
+function attachSlackReviewButton() {
+  chrome.storage.local.get(null, addButtons);
+}
+
+attachSlackReviewButton();
