@@ -46,11 +46,16 @@ function sendRequest(params, channelName, button) {
 }
 
 function addButton(params, channelName) {
+  var id = "button-" + channelName.substring(1);
+  var existingButton = document.querySelector("#" + id);
+  if (existingButton) return;
+
   var hasSentRequest = false;
   var button = document.createElement("BUTTON");
   button.innerHTML = 'Send to ' + channelName;
   button.type = "button";
   button.className = "btn btn-sm";
+  button.id = id;
   button.addEventListener("click", function() {
     if (!hasSentRequest) {
       sendRequest(params, channelName, button);
